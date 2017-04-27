@@ -29,3 +29,6 @@ SOURCES += main.cpp\
 
 HEADERS  += ControlApp.h \
     ControlStartupScreen.h
+
+RESOURCES += \
+    resources.qrc

@@ -14,6 +14,8 @@ public:
     ~ControlApp();
 
 private:
+    void loadStyleSheet(const QString& sheetName);
+    
     ControlStartupScreen* m_pStartupScreen;
 };
 
