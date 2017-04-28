@@ -4,6 +4,9 @@
 #include <QMainWindow>
 
 class ControlStartupScreen;
+class ControlRegisterScreen;
+class QVBoxLayout;
+class QStackedWidget;
 
 class ControlApp : public QMainWindow
 {
@@ -16,7 +19,10 @@ public:
 private:
     void loadStyleSheet(const QString& sheetName);
     
-    ControlStartupScreen* m_pStartupScreen;
+    ControlStartupScreen*   m_pStartupScreen;
+    ControlRegisterScreen*  m_pRegisterScreen;
+    QVBoxLayout*            m_pLayout;
+    QStackedWidget*         m_pStackedWidget;
 };
 
 #endif // CONTROLAPP_H
