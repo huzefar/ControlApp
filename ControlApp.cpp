@@ -8,13 +8,14 @@ ControlApp::ControlApp(QWidget *parent)
     : QMainWindow(parent)
     , m_pStartupScreen(Q_NULLPTR)
 {
+    setObjectName("ControlApp");
+
     if (!m_pStartupScreen)
     {
         m_pStartupScreen = new ControlStartupScreen(this);
     }
     
     setMinimumSize(750, 1334);
-//    setWindowFlags(Qt::Max);
     loadStyleSheet("stylesheet");
 }
 
@@ -28,5 +29,6 @@ void ControlApp::loadStyleSheet(const QString &sheetName)
     file.open(QFile::ReadOnly);
     QString styleSheet = QLatin1String(file.readAll());
 
-    qApp->setStyleSheet(styleSheet);
+    setStyleSheet(styleSheet);
+//    setStyleSheet("background-image: url(:/resources/background.jpg)");
 }

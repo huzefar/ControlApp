@@ -1,0 +1,3 @@
+QWidget#ControlApp {
+    background-image: url(:/resources/background.jpg);
+}

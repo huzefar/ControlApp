@@ -25,10 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         ControlApp.cpp \
-    ControlStartupScreen.cpp
+    ControlStartupScreen.cpp \
+    ControlRegisterScreen.cpp
 
 HEADERS  += ControlApp.h \
-    ControlStartupScreen.h
+    ControlStartupScreen.h \
+    ControlRegisterScreen.h
 
 RESOURCES += \
     resources.qrc
