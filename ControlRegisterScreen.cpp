@@ -17,19 +17,19 @@ ControlRegisterScreen::ControlRegisterScreen(ControlApp* parent)
     setMinimumSize(450, 600);
     m_pEmail = new QLineEdit(this);
     m_pEmail->setPlaceholderText("email");
-    m_pEmail->setMinimumWidth(300);
-    
+    m_pEmail->setMinimumSize(300, 30);
+
     m_pConfirmEmail = new QLineEdit(this);
     m_pConfirmEmail->setPlaceholderText("confirm email");
-    m_pConfirmEmail->setMinimumWidth(300);
-    
+    m_pConfirmEmail->setMinimumSize(300, 30);
+
     m_pPassword = new QLineEdit(this);
     m_pPassword->setEchoMode(QLineEdit::PasswordEchoOnEdit);
     m_pPassword->setPlaceholderText("password");
-    m_pPassword->setMinimumWidth(300);
+    m_pPassword->setMinimumSize(300, 30);
 
     m_pNextButton = new QPushButton("Next", this);
-    m_pNextButton->setMinimumWidth(300);
+    m_pNextButton->setMinimumSize(300, 30);
     
     if (!m_pLayout)
     {

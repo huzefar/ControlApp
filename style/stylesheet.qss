@@ -1,6 +1,13 @@
 QWidget#ControlApp {
-    background-color: rgb(240,232,196);
+    background-image: url(:/resources/living_room.jpg);
 }
 QWidget#ControlStartUpScreen {
     background-color: red;
+}
+QPushButton {
+border-style: outset;
+background-color: #a49480;
+border-radius: 10px;
+border-color: #443028;
+border-width: 2px;
 }

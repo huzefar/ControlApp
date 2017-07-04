@@ -6,16 +6,19 @@
 
 #include "ControlStartupScreen.h"
 #include "ControlRegisterScreen.h"
+#include "ControlLoginScreen.h"
 #include "ControlApp.h"
 
 ControlApp::ControlApp(QWidget *parent)
     : QMainWindow(parent)
     , m_pStartupScreen(Q_NULLPTR)
     , m_pRegisterScreen(Q_NULLPTR)
+    , m_pLoginScreen(Q_NULLPTR)
     , m_pLayout(Q_NULLPTR)
     , m_pStackedWidget(Q_NULLPTR)
 {
     setObjectName("ControlApp");
+    setAutoFillBackground(true);
 
 //    if (!m_pStackedWidget)
     {
@@ -35,6 +38,12 @@ ControlApp::ControlApp(QWidget *parent)
         m_pRegisterScreen = new ControlRegisterScreen(this);
         m_pRegisterScreen->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         m_pRegisterScreen->hide();
+    }
+
+    {
+        m_pLoginScreen = new ControlLoginScreen(this);
+        m_pLoginScreen->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        m_pLoginScreen->hide();
     }
 
 //    if (!m_pLayout)
@@ -64,21 +73,25 @@ void ControlApp::onCreateAccButtonClicked()
 {
     qDebug() << Q_FUNC_INFO;
     m_pStartupScreen->hide();
+    m_pLoginScreen->hide();
     m_pRegisterScreen->show();
 }
 
 void ControlApp::onLoginButtonClicked()
 {
     qDebug() << Q_FUNC_INFO;
-    
+    m_pStartupScreen->hide();
+    m_pRegisterScreen->hide();
+    m_pLoginScreen->show();
 }
 
 void ControlApp::showEvent(QShowEvent* event)
 {
     QWidget::showEvent(event);
     
-    m_pStartupScreen->show();
     m_pRegisterScreen->hide();
+    m_pLoginScreen->hide();
+    m_pStartupScreen->show();
 }
 
 void ControlApp::loadStyleSheet(const QString &sheetName)
@@ -88,5 +101,5 @@ void ControlApp::loadStyleSheet(const QString &sheetName)
     QString styleSheet = QLatin1String(file.readAll());
 
     setStyleSheet(styleSheet);
-//    setStyleSheet("background-image: url(:/resources/background.jpg)");
+    //setStyleSheet("background-image: url(:/resources/background.jpg)");
 }

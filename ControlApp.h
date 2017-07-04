@@ -5,6 +5,7 @@
 
 class ControlStartupScreen;
 class ControlRegisterScreen;
+class ControlLoginScreen;
 class QVBoxLayout;
 class QStackedWidget;
 
@@ -28,6 +29,7 @@ private:
     
     ControlStartupScreen*   m_pStartupScreen;
     ControlRegisterScreen*  m_pRegisterScreen;
+    ControlLoginScreen*		m_pLoginScreen;
     QVBoxLayout*            m_pLayout;
     QStackedWidget*         m_pStackedWidget;
 };

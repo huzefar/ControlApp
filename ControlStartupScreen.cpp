@@ -17,14 +17,16 @@ ControlStartupScreen::ControlStartupScreen(ControlApp *parent)
     if(!m_pCreateAccButton)
     {
         m_pCreateAccButton = new QPushButton("Create Account", this);
-        m_pCreateAccButton->setFixedWidth(FIXED_WIDTH);
+        //m_pCreateAccButton->setFixedWidth(FIXED_WIDTH);
+        m_pCreateAccButton->setMinimumSize(300, 30);
         connect(m_pCreateAccButton, &QPushButton::clicked, parent, &ControlApp::onCreateAccButtonClicked);
     }
     
     if(!m_pLoginButton)
     {
         m_pLoginButton = new QPushButton("Login", this);
-        m_pLoginButton->setFixedWidth(FIXED_WIDTH);
+        //m_pLoginButton->setFixedWidth(FIXED_WIDTH);
+        m_pLoginButton->setMinimumSize(300, 30);
         connect(m_pLoginButton, &QPushButton::clicked, parent, &ControlApp::onLoginButtonClicked);
     }
     
