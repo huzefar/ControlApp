@@ -16,6 +16,13 @@ public:
     ControlApp(QWidget *parent = 0);
     ~ControlApp();
 
+public Q_SLOTS:
+    void onCreateAccButtonClicked();
+    void onLoginButtonClicked();
+    
+protected:
+    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    
 private:
     void loadStyleSheet(const QString& sheetName);
     

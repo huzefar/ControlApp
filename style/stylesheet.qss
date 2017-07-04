@@ -1,3 +1,6 @@
 QWidget#ControlApp {
-    background-image: url(:/resources/background.jpg);
+    background-color: rgb(240,232,196);
+}
+QWidget#ControlStartUpScreen {
+    background-color: red;
 }
